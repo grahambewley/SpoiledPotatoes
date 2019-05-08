@@ -1,0 +1,17 @@
+<div class="critic-card col-md-12">
+    <div class="card mb-10 no-border-radius" style="margin:5px;">
+      <div class="row no-gutters">
+        <!-- If this critic has an image, display it -->
+        <div ng-if="criticObject.multimedia != null"class="col-3">
+          <img class="critic-card-image" src="{{ criticObject.multimedia.resource.src }}" class="card-img">
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <h5 class="card-title">{{ criticObject.display_name | uppercase }}</h5>
+            <p class="card-text">{{ criticObject.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{ criticObject.review_count }} Total Reviews</small></p>
+            <p class="card-text"><small class="text-muted">{{ criticObject.critics_pick_count }} Critic's Picks</small></p>
+          </div>
+        </div>
+      </div>
+</div>

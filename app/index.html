@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Spoiled Potatoes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    
+    <meta http-equiv="expires" content="0">
+    
+    <!-- Load Bootstrap CSS and Google Font -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900i" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    
+</head>
+
+<body ng-app="movieReviewsTestApp">
+    
+    <div class="container">
+        
+            <nav class="navbar navbar-expand-lg navbar-dark" style="color: white">
+        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="home">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="criticList">Critics</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div ui-view></div>
+    </div>
+
+    <!-- Load jQuery, AngularJS, Angular modules -->
+    <script src="/bower_components/jquery/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://code.angularjs.org/snapshot-stable/angular.min.js"></script>
+    <script src="https://code.angularjs.org/snapshot-stable/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script>
+    -->
+    
+    <!-- Load Javascript files -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/reviewList_controller.js"></script>
+    <script src="scripts/review_controller.js"></script>
+    <script src="scripts/critics_controller.js"></script>
+      
+</body>
+</html>

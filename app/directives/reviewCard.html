@@ -1,0 +1,23 @@
+
+<div class="col-lg-3 col-md-4 card-container">
+    <a ui-sref="review">
+        <div class="card border-light no-border-radius">
+                <!-- Display Movie Image -->
+                <img class="card-img-top no-border-radius" src="{{ reviewObject.multimedia.src }}">
+                <div class="card-body">
+
+                    <!-- Dislpay only if review is Critic's Pick -->
+                    <p class="card-text text-right criticsPick" ng-show="{{ reviewObject.critics_pick }} === 1"><small><span style="color:darkorange;">&starf;</span> CRITIC'S PICK</small></p>
+                    <!-- Display Movie Title -->
+                    <h5 class="card-title">{{ reviewObject.display_title }}</h5>
+
+                    <!-- Display only if Rating exists -->
+                    <p class="card-text" ng-show="{{ reviewObject.mpaa_rating !== '' }}"><small class="text-muted">MPAA Rating: {{ reviewObject.mpaa_rating }}</small></p>
+
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Published {{ reviewObject.publication_date | date:'MMM dd, yyyy' }}</small>
+                </div>
+        </div>
+    </a>
+</div>

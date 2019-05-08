@@ -1,0 +1,30 @@
+<div>
+    <h1><a ui-sref="home">Movie Reviews</a></h1>
+    <div class="review-detail-container">
+        <h2 class="text-center">{{ selectedReviewHeadline }}</h2>
+        <div class="row">            
+            <img class="review-detail-image" src="{{ selectedReviewImageUrl }}">     
+            <div class="review-detail-info">
+                <!-- Only show this line if the review is a Critic's Pick -->
+                <p ng-show="{{ selectedReviewCriticsPick }} === 1"><small><span style="color:darkorange;">&starf;</span> CRITIC'S PICK</small></p>
+                <p><b>{{ selectedReviewTitle }}</b></p>
+                
+                <p ng-show="{{ selectedReviewRating !== '' }}"><small>MPAA Rating: {{ selectedReviewRating }}</small></p>
+                <p><small>Reviewed by: {{ selectedReviewCriticName }}</small></p>
+            
+            </div>
+            
+        
+        </div>
+        
+        <p class="text-center" style="margin-top:20px">{{ selectedReviewSummary }}</p>
+        
+        <div class="row d-flex justify-content-center">
+            <a class="review-detail-button col-4 btn btn-md btn-secondary" role="button" target="_blank" href="{{ selectedReviewArticleUrl }}">View the Full New York Times Review</a>
+        </div>
+        
+        <div class="row d-flex justify-content-center">
+            <a class="review-detail-button col-4 btn btn-md btn-secondary" role="button" ui-sref="home" style="width:400px;">Return to Movie Reviews List</a>
+        </div>
+    </div>
+</div>

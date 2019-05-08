@@ -1,0 +1,59 @@
+<div>
+    <h1>Movie Reviews</h1>
+    
+    <nav class="navbar navbar-light bg-transparent">
+        
+        <!-- Variable amount of reviews to display -->
+
+        <form class="form-inline">
+            <select id="reviewsToDisplay" ng-model="reviewsOnPageCount" class="form-control">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+            </select>
+            
+            <button ng-disabled="!prevAvailable" ng-click="prevPage()">
+                &laquo; Prev. Page
+            </button>
+            <button ng-disabled="!nextAvailable" ng-click="nextPage()">
+                Next Page &raquo;
+            </button>
+            
+        </form>
+
+        
+        <form class="form-inline">
+            
+            <!-- Filter by Critic's Pick -->
+            <div class="checkbox">
+            
+                <label style="color:white; cursor:pointer"><input ng-model="filterCriticsPick" type="checkbox" style="margin-right:5px;">Critic's Pick</label>
+            </div>
+            <!-- Filter by MPAA Rating -->
+            <select ng-model="filterRating" class="form-control">
+                <option selected value="default">Any Rating</option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+            
+            <!-- Filter by Publication Date -->
+            <select ng-model="filterPublicationDate" class="form-control">
+                <option selected value="default">Any Publication Date</option>
+                <option value="date_last_week">Last 7 days</option>
+                <option value="date_last_month">Last month</option>
+                <option value="date_last_year">Last year</option>
+            </select>
+            
+            <!-- Input allowing user to search for title -->
+            <input ng-model="filterTitles" class="form-control mr-sm-2 titleSearchBar" placeholder="Filter Titles">
+            
+        </form>
+    </nav>
+    <div class="row">
+            <review-card ng-repeat="review in reviewsOnPage" review-object="review"></review-card>  
+    </div>
+</div>
